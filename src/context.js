@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import items from './data'
+// import items from './data'
+import Client from './Contentful'
 
 
 const RoomContext = React.createContext();
@@ -22,8 +23,16 @@ const RoomContext = React.createContext();
     };
 
     // getData
-    componentDidMount() {
-        let rooms = this.formatData(items);
+
+    getData = async () =>{
+        try{
+          let response = await Client.getEntries({
+            content_type: "beachResortRoom",
+            // order: "sys.createdAt"
+             order: "fields.price"
+          });
+        
+        let rooms = this.formatData(response.items);
         let featuredRooms = rooms.filter(room => room.featured
             === true);
         
@@ -39,6 +48,13 @@ const RoomContext = React.createContext();
             maxPrice,
             maxSize
         })
+        } catch(error){
+            console.log(error)
+        }
+    }
+
+    componentDidMount() {
+        this.getData()  
         
     }
 

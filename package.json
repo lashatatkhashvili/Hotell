@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "contentful": "^7.14.8",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-icons": "^3.11.0",
@@ -13,7 +14,7 @@
     "react-scripts": "3.4.3",
     "styled-components": "^5.2.0"
   },
-  "homepage": "https://lashatatkhashvili.github.io/",
+  "homepage": "https://lashatatkhashvili.github.io/Hotel",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
